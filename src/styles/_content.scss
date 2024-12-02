@@ -1,0 +1,52 @@
+@use 'variables';
+@use 'mixins';
+
+body {
+    background-image: url(../assets/img/imgfondo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-size: variables.$tipografia-tamaño-paragraph;
+}
+
+.hero {
+    text-align: center;
+    padding: 50px;
+
+    .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 100px;
+
+        .office-image {
+            width: 400px;
+            height: auto;
+            @include mixins.breakpoint(small) {
+                width: 90%; 
+                margin-bottom: 20px; 
+            }
+        }
+
+        .text {
+            max-width: 500px;
+            text-align: left;
+            color: variables.$color-secondary-03;
+            font-family: 'Lato';
+            line-height: 1.5;
+            @include mixins.breakpoint(small) {
+                text-align: center;
+                padding: 10px;
+                font-size: 14px; 
+            }
+        }
+
+        @include mixins.breakpoint(small) {
+            flex-direction: column; 
+            gap: 20px; 
+        }
+
+        @include mixins.breakpoint(medium) {
+            gap: 50px; 
+        }
+    }
+}

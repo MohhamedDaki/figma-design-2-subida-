@@ -1,0 +1,119 @@
+@use 'variables';
+@use 'mixins';
+
+
+
+body{
+    background-image: url(../assets/img/imgfondo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column; 
+    min-height: 100vh;       
+    justify-content: space-between;  
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+.login-form-container {
+border: 1px solid variables.$color-primario;
+  width: 100%;
+  max-width: 400px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  margin-top: 25px;
+  margin-bottom: 25px;
+  color: variables.$color-secondary-01;
+  @include mixins.breakpoint(small) {
+    max-width: 300px;
+    padding: 15px;
+}
+
+@include mixins.breakpoint(medium) {
+    max-width: 350px;
+}
+
+
+  .close-btn {
+    background-color: variables.$color-secondary-01;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid white;
+    padding: 15px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    
+
+    input {
+        @include mixins.input-style;
+
+    }
+
+    .options {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      width: 100%;
+
+      label {
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+        color: variables.$color-secondary-05;
+
+      
+      }
+
+      a {
+        font-size: 12px;
+        text-decoration: none;
+        color: variables.$color-secondary-05;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .login-btn {
+      background: variables.$color-primario;
+      border: none;
+      border-radius: 5px;
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+      color: variables.$color-secondary-03;
+      @include mixins.breakpoint(small) {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+      &:hover {
+        background: variables.$color-secondary-01;
+      }
+    }
+  }
+}
+}
